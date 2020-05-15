@@ -1,10 +1,25 @@
+/**
+ * Project:     BasicOTA for VSCode-PlatformIO
+ * Doc:         https://github.com/JakubAndrysek/Remote-serial-example/blob/master/README.md
+ * Proj URL:    https://github.com/JakubAndrysek/Remote-serial-example
+ * Author:      Kuba Andrýsek
+ * Created:     2020-5-15
+ * Website:     https://kubaandrysek.cz
+*/
+
 #include <Arduino.h>
 #include <WiFi.h>
 #include <WiFiClient.h>
 
-#define SSID       "SSID"
-#define PASSWORD   "PASSWORD"
-#include "credentials.h"
+WiFiClient debug;
+WiFiClient data;
+
+// Setup connection
+#define SSID       "WiFi_SSID"
+#define PASSWORD   "WiFi_PASSWORD"
+static const IPAddress Debug_IP { 192, 168, 0, 13 };    //IP adress of your PC with Lorris
+static const uint16_t Debug_port = 12345;               //Proxy debug port
+static const uint16_t Data_port = 12346;                //Proxy data port
 
 // If something setup is wrong
 void trap()
@@ -12,15 +27,6 @@ void trap()
     Serial.println("Error\n");
     while(1);
 }
-
-
-// Setup connection settings
-WiFiClient debug;
-WiFiClient data;
-static const IPAddress Debug_IP { 192, 168, 0, 13 };    //IP adress of your proxy Lorrys terminal
-static const uint16_t Debug_port = 12345;               //Proxy debug port
-static const uint16_t Data_port = 12346;                //Proxy data port
-
 
 void setup() {
     Serial.begin(115200);
