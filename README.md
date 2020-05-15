@@ -1,5 +1,16 @@
+# Navigation
+- [Navigation](#navigation)
+- [Remote serial in Lorris for ESP32](#remote-serial-in-lorris-for-esp32)
+  - [Example code how to use Lorris terminal with ESP32 as remote Data-debug display](#example-code-how-to-use-lorris-terminal-with-esp32-as-remote-data-debug-display)
+- [Setup Lorris](#setup-lorris)
+- [Setup software](#setup-software)
+
+
 # Remote serial in Lorris for ESP32
+## Example code how to use Lorris terminal with ESP32 as remote Data-debug display
+
 ![](docs/Terminal-text.png)
+
 
 # Setup [Lorris](https://tasssadar.github.io/Lorris)
 1. Go to [https://tasssadar.github.io/Lorris](https://tasssadar.github.io/Lorris)
